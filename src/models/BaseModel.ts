@@ -34,7 +34,7 @@ export class BaseModel<
 		this.parent = parent;
 	}
 
-	public getSelectedEntities(): BaseModel<any, T>[] {
+	public getSelectedEntities(): BaseModel<any, BaseModelListener>[] {
 		if (this.isSelected()) {
 			return [this];
 		}

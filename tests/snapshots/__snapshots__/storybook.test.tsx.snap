@@ -759,7 +759,7 @@ exports[`Storyshots Tests demos/demo-dagre/index.tsx 1`] = `
           style={
             Object {
               "left": 22.5,
-			  "top": 0,
+              "top": 0,
             }
           }
         >
@@ -831,7 +831,7 @@ exports[`Storyshots Tests demos/demo-dagre/index.tsx 1`] = `
           style={
             Object {
               "left": 55,
-			  "top": 220,
+              "top": 220,
             }
           }
         >
@@ -920,7 +920,7 @@ exports[`Storyshots Tests demos/demo-dagre/index.tsx 1`] = `
           style={
             Object {
               "left": 165,
-			  "top": 220,
+              "top": 220,
             }
           }
         >
@@ -1049,7 +1049,7 @@ exports[`Storyshots Tests demos/demo-dagre/index.tsx 1`] = `
           style={
             Object {
               "left": 0,
-              "top": 330,	
+              "top": 330,
             }
           }
         >
@@ -1121,7 +1121,7 @@ exports[`Storyshots Tests demos/demo-dagre/index.tsx 1`] = `
           style={
             Object {
               "left": 155,
-			  "top": 330,
+              "top": 330,
             }
           }
         >
