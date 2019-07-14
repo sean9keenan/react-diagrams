@@ -11,8 +11,8 @@ export interface NodeLayerProps extends BaseWidgetProps {
 
 export interface NodeLayerState {}
 
-export class NodeLayerWidget extends BaseWidget<NodeLayerProps, NodeLayerState> {
-	constructor(props: NodeLayerProps) {
+export class NodeLayerWidget<P extends NodeLayerProps = NodeLayerProps> extends BaseWidget<P, NodeLayerState> {
+	constructor(props: P) {
 		super("srd-node-layer", props);
 		this.state = {};
 	}

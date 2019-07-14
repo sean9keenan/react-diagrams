@@ -46,7 +46,7 @@ export interface DiagramState {
 /**
  * @author Dylan Vorster
  */
-export class DiagramWidget extends BaseWidget<DiagramProps, DiagramState> {
+export class DiagramWidget <P extends DiagramProps = DiagramProps> extends BaseWidget<P, DiagramState> {
 	public static defaultProps: DiagramProps = {
 		diagramEngine: null,
 		allowLooseLinks: true,
@@ -57,10 +57,18 @@ export class DiagramWidget extends BaseWidget<DiagramProps, DiagramState> {
 		smartRouting: false,
 		deleteKeys: [46, 8]
 	};
+	// state: Readonly<S> = {
+	// 		action: null,
+	// 		wasMoved: false,
+	// 		renderedNodes: false,
+	// 		windowListener: null,
+	// 		diagramEngineListener: null,
+	// 		document: null
+	// 	};
 
 	onKeyUpPointer: (this: Window, ev: KeyboardEvent) => void = null;
 
-	constructor(props: DiagramProps) {
+	constructor(props: P) {
 		super("srd-diagram", props);
 		this.onMouseMove = this.onMouseMove.bind(this);
 		this.onMouseUp = this.onMouseUp.bind(this);
@@ -82,7 +90,7 @@ export class DiagramWidget extends BaseWidget<DiagramProps, DiagramState> {
 		window.removeEventListener("mouseMove", this.onMouseMove);
 	}
 
-	componentWillReceiveProps(nextProps: DiagramProps) {
+	componentWillReceiveProps(nextProps: P) {
 		if (this.props.diagramEngine !== nextProps.diagramEngine) {
 			this.props.diagramEngine.removeListener(this.state.diagramEngineListener);
 			const diagramEngineListener = nextProps.diagramEngine.addListener({
@@ -92,7 +100,7 @@ export class DiagramWidget extends BaseWidget<DiagramProps, DiagramState> {
 		}
 	}
 
-	componentWillUpdate(nextProps: DiagramProps) {
+	componentWillUpdate(nextProps: P) {
 		if (this.props.diagramEngine.diagramModel.id !== nextProps.diagramEngine.diagramModel.id) {
 			this.setState({ renderedNodes: false });
 			nextProps.diagramEngine.diagramModel.rendered = true;
