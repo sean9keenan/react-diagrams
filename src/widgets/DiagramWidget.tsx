@@ -111,7 +111,7 @@ export class DiagramWidget <P extends DiagramProps = DiagramProps> extends BaseW
 		}
 	}
 
-	componentDidUpdate() {
+	componentDidUpdate(prevProps: P) {
 		if (!this.state.renderedNodes) {
 			this.setState({
 				renderedNodes: true
